@@ -1,11 +1,12 @@
 Package: flowFP
 Type: Package
 Title: Fingerprinting for Flow Cytometry
-Version: 1.57.0
-Author: Herb Holyst <holyst@mail.med.upenn.edu>, Wade Rogers
-        <rogersw@mail.med.upenn.edu>
+Version: 1.57.1
+Author: Herb Holyst <holyst@pennmedicine.upenn.edu>, Wade Rogers
+        <wade.rogers@spcytomics.com>
 Date: 2009
-Maintainer: Herb Holyst <holyst@mail.med.upenn.edu>
+Maintainer: Herb Holyst <holyst@pennmedicine.upenn.edu>, Wade Rogers
+        <wade.rogers@spcytomics.com>
 Depends: R (>= 2.10), flowCore, flowViz
 Imports: Biobase, BiocGenerics (>= 0.1.6), graphics, grDevices,
         methods, stats, stats4
