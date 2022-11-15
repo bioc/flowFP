@@ -30,15 +30,17 @@ plotFancy <- function(x, y, highlight=NULL, parameters=NULL,
 	## Figure out if the user wants to see the bin boundaries, and create vector
 	## for user short hand 'all'. Note if we are to show bins we plot all of the other
 	## points in black.
-	if(!is.null(showbins)) {
-	  if (is.logical(showbins)) {
-	    if (all(showbins) == TRUE) {
-	      showbins = 1:nFeatures(fp)
+	if (!is.null(showbins)) {
+	  if(length(showbins) == 1 && showbins == 'all') {
+	    showbins = 1:nFeatures(fp)
+	  } else {
+	    if (is.logical(showbins)) {
+	      if(length(showbins) != nFeatures(fp)) {
+	        stop("if showbins is a logical vector it must have length equal to nFeatures(fp)")
+	      }
+	      showbins = which(showbins)
 	    }
 	  }
-		if (showbins == 'all') {
-			showbins = 1:nFeatures(fp)
-		}
 	}
 
 	# create luts
@@ -89,17 +91,6 @@ plotFancy <- function(x, y, highlight=NULL, parameters=NULL,
 		first_time = FALSE
 	}
 
-	if(!is.null(showbins) ) {
-		if (is.logical(showbins)) {
-            if (all(showbins) == TRUE) {
-                showbins = 1:nFeatures(fp)
-            }
-        }
-        if (showbins == 'all') {
-			showbins = 1:nFeatures(fp)
-		}
-    }
-        
 	if (is.numeric(showbins)) {
 		plotBinBoundaries(fp, y=fs, parameters, alpha, border, showbins, pch=pch, cex=cex)
 	}
