@@ -1,7 +1,7 @@
 Package: flowFP
 Type: Package
 Title: Fingerprinting for Flow Cytometry
-Version: 1.61.0
+Version: 1.62.0
 Author: Herb Holyst <holyst@pennmedicine.upenn.edu>, Wade Rogers
         <wade.rogers@spcytomics.com>
 Date: 2009
